@@ -1,19 +1,11 @@
 package interfaces;
 
-public class Main {
+public class EmailLogger implements Logger{
 
-	public static void main(String[] args) {
-
-		Logger[] loggers = {new SmsLogger(), new EmailLogger(), new DatabaseLogger(), new FileLogger()};
+	@Override
+	public void log(String message) {
+		System.out.println("Email Loglandi " + message);
 		
-		CustomerManager customerManager = new CustomerManager(loggers); // kullanabilmek icin newlemek gerek.
-		
-		Customer engin = new Customer(1,"Engin","Demirog");
-		
-		customerManager.add(engin);
-		
-
-
 	}
 
 }
